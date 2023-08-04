@@ -1,0 +1,28 @@
+Feedback for Nien, T.:
+
+Q1.1 (first CNN model): 13.0/15
+Good, but missing at least some discussion on filter sizes and padding. 
+
+Q1.2 (data augmentation): 7.0/8
+Have you considered color shifts to make the model less sensitive to skin tone?
+
+Validation score (/100 and scaled /7): 3.15/7
+79.37
+
+Q2.1 (evaluate on test set, scaled /5): 3.3/5
+Ok. Test score (/100 and scaled /5): 87.37
+
+Q2.2 (confusion matrix and misclassifications): 15.0/20
+The explanation was a little unclear: how is paper both similar to rock and scissors? Why do you think further data augmentation is the answer, as opposed to tuning the network? What do you mean with "fail
+to learn the features of fingers"?
+
+Q3.1 (transfer of pretrained MobileNet): 20.0/20
+Ok
+
+Test score (/100 and scaled /5).1: 4.7/5
+97.62
+
+Q3.2 (visualize with tSNE): 16.0/20
+Don't forget a legend to your figure so the reader can see which color corresponds to which class. Please discuss the fully connected layers you added.
+
+Total: 82.15 / 100

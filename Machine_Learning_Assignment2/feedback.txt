@@ -1,0 +1,43 @@
+Feedback for Nien, T.:
+
+Q1.1 : 4.0/4
+OK
+
+Q1.2 : 4.0/4
+OK
+
+Q1.3 : 2.0/2
+OK
+
+Q1.4 : 1.5/2
+Your pipeline produces 1206 features (underfilled_job_title  produces 85 features after encoding while nunique reports 84).
+
+Q2.1 : 2.0/2
+Good
+
+Q2.2 : 4.0/4
+Good
+
+Q2.3 : 1.66/2
+A,C,D,E,H,I was the correct answer
+(-0.33 per mismatch)
+
+Q2.4 : 5.33/6
+High salary groups exist, though they are less obvious than low-salaried groups.
+
+Q2.5 : 1.0/2
+No answer provided.
+
+Q3.1 : 4.0/4
+Well done
+
+Q3.2 : 2.0/2
+Well done
+
+Q4.1 : 3.0/3
+Well done
+
+Q4.2 : 2.25/3
+Report R2 scores explicitly if the differences are this minimal.
+
+Total: 36.74 / 40

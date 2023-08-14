@@ -12,7 +12,7 @@ Leveraging the power of Machine Learning, this assignment embarked on a journey 
 ### Assignment2: Data Cleaning, Encoding, Pipeline & Feature Importance
 Rather than merely conducting a grid search across an array of models, the assignment focus lies in deliberate and considerate preprocessing, using the [Employee Salary dataset](https://www.openml.org/d/42125), a comprehensive collection of salary information for individuals employed within a local government in USA. The initial step entails constructing a machine learning pipeline aimed at performing essential data preprocessing. This process ensures that we can meticulously analyze models in a purposeful manner, all the while safeguarding against data leakage during the evaluation phase. The ultimate objective is to predict salaries and, simultaneously, scrutinize the data and our models for any potential biases. This scrutiny aids us in developing an awareness of potential biases and equips us with the knowledge to circumvent them during model training.
 
-#### Example Code Pipeline
+#### Example Code: Pipeline
 ```
 def flexible_pipeline(X, model, scaler=StandardScaler(), encoder=OneHotEncoder(sparse=False, handle_unknown='ignore')):
     # Numeric Features
@@ -30,9 +30,9 @@ def flexible_pipeline(X, model, scaler=StandardScaler(), encoder=OneHotEncoder(s
     return Pipeline(steps=[("preprocessing", transformer), ("model", model)])
 ```
 
-#### Example Code Random Forest and Feature Importance 
+#### Example Code: Random Forest and Feature Importance 
 ```
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, shuffle=True)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, shuffle=True)
 
     X_sub = X_train.copy()
     y_sub = y_train.copy()
@@ -57,5 +57,27 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0, shuffl
 ### Assignment3: Convolutional Neural Network, Image Preprocessing & Recognition, Tsne & Mobilenetv2
 In this assignment, we'll harness the capabilities of a TensorFlow Dataset to drive our exploration. Specifically, we've opted to engage with the [rock_paper_scissors dataset](https://www.tensorflow.org/datasets/catalog/rock_paper_scissors), which boasts a collection of captivating images depicting hands in the midst of rock, paper, and scissor gameplay. Each of these images boasts dimensions of (300, 300, 3), and the dataset itself encompasses a robust assemblage of 2520 training images and 372 testing images.
 
+#### Example Code: Mobilenetv2
+```
+def build_model_3_1():
+    conv_base = MobileNetV2(input_shape = IMG_SHAPE, include_top=False)
 
-### Reference: [Tu/e Machine Learning Course]
+    conv_base.trainable = False
+    model = models.Sequential()
+    model.add(conv_base)
+    
+    model.add(layers.BatchNormalization())
+    model.add(layers.GlobalAveragePooling2D())
+    model.add(layers.Dropout(0.3))
+    model.add(layers.Dense(256, kernel_regularizer='l2', activation='relu'))
+    model.add(layers.BatchNormalization())
+    model.add(layers.Dropout(0.5))
+    model.add(layers.Dense(3, activation='softmax'))
+    model.compile(optimizers.Adam(learning_rate=0.01), loss='categorical_crossentropy', metrics=['accuracy'])
+
+    return model
+```
+
+
+
+### Reference: [Tu/e 2AMM15 Machine Learning Course](https://github.com/ML-course)

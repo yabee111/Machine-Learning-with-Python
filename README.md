@@ -2,7 +2,9 @@
 TU/e Machine Learning Course Assignment Project
 
 ![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue)
-  
+
+- Code: Assignment_X.ipynb
+- Results: First get clone and double click 'Submission.html'
 
 ## Assignment Overview
 ### Assignment1: Logistic Regression & Cross-validation
